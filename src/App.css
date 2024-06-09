@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Press+Start+2P&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.App {
+  text-align: center;
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #8ab9eb;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  width: 100%;
+  overflow: hidden;
+}
+
+.App-header.logged-in {
+  background-color: black;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding-top:30px;
+  padding-bottom:30px;
+}
+
+.App-header.logged-out {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.table {
+  background: black;
+  width: 50%;
+  height: 500px;
+  margin: 50px auto 0;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.spotify-login-button{
+  border: solid black 3px;
+  border-radius: 5px;
+  background-color: green;
+  margin-top: 50px;
+  padding-top:25px;
+  padding-bottom:25px;
+  padding-right:10px;
+  padding-left:10px;
+  font-size:16px;
+  font-family: "Press Start 2P", system-ui;
+
+}
+
+.spotify-link{
+  text-decoration: none;
+  color: black;
+}
+
+.logout-button{
+  border: solid black 3px;
+  border-radius: 5px;
+  background-color: lightskyblue;
+  margin-top: 50px;
+  padding-top:25px;
+  padding-bottom:25px;
+  padding-right:10px;
+  padding-left:10px;
+  font-size:16px;
+  font-family: "Press Start 2P", system-ui;
+}
+
+.hero{
+  background-color: black;
+}
+
+.highscorify-container {
+  padding: 20px;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+}
+
+th{
+  padding-bottom:20px;
+}
+
+td {
+  text-align: left;
+  padding-bottom:12px;
+  line-height: 1.5;
+  
+}
+
+.rank{
+  text-align:center;
+  
+}
+
+.name{
+  width:270px;
+  word-break: break-word;
+}
+
+.score{
+  text-align:center;
+}
+
+table {
+  margin: 0 auto;
+  border-spacing: 50px 0px;
+}
+
+.options{
+  font-size:12px;
+}
+
+.leaderboard-settings{
+  margin-bottom:50px;
+  font-size:25px;
+}
+
+.leaderboard-head{
+  font-size: 18px;
+}
+
+thead{
+  text-align:left;
+  
+}
+
+footer{
+  padding-top: 30px;
+  padding-bottom:30px;
+}
+
+.icon {
+  margin-right: 8px;
+  color: #1DB954; /* Spotify Green */
+}
+
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+button span.icon {
+  margin-left: -20px;
+}
+
+button:hover .icon {
+  color: #1ED760; /* Slightly lighter green for hover effect */
+}
