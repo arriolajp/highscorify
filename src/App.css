@@ -105,7 +105,7 @@ html, body {
   padding: 20px;
   width: 100%;
   height: 100%;
-  font-size: 12px;
+  font-size: calc(10px + 2vmin);
   background-image: url("https://i.pinimg.com/originals/1a/7d/cc/1a7dcc374628bc21f6ef890463a77eae.png");
   background-size: cover;
 }
@@ -128,7 +128,7 @@ td {
 
 .name{
   width:270px;
-  word-break: break-word;
+  word-break: break-all;
 }
 
 .score{
@@ -147,6 +147,7 @@ table {
 .leaderboard-settings{
   margin-bottom:50px;
   font-size:25px;
+  margin-top:10px;
 }
 
 .leaderboard-head{
