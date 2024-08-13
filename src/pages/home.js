@@ -4,7 +4,7 @@ import Axios from "axios";
 
 export function Home(){
   const CLIENT_ID="611973d560d1464fb5a4db10d6b19a78";
-  const REDIRECT_URI="https://master.d1djejxyh5xexr.amplifyapp.com";
+  const REDIRECT_URI="https://master.d1djejxyh5xexr.amplifyapp.com/callback";
   //host https://master.d1djejxyh5xexr.amplifyapp.com
   const AUTH_ENDPOINT="https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE="token";
