@@ -1,10 +1,11 @@
-import './App.css';
+import '../App.css';
 import {useEffect, useState} from "react";
 import Axios from "axios";
 
-function App() {
+export function Home(){
   const CLIENT_ID="611973d560d1464fb5a4db10d6b19a78";
   const REDIRECT_URI="https://master.d1djejxyh5xexr.amplifyapp.com";
+  //host https://master.d1djejxyh5xexr.amplifyapp.com
   const AUTH_ENDPOINT="https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE="token";
   const SCOPE = "user-top-read";
@@ -113,15 +114,21 @@ function App() {
       }
     }
   }, [token,settings]);
-
-
-  
-
-  return (
-    <div className="App">
+  return(
+  <div className="App">
       <header className={`App-header ${token ? "logged-in" : "logged-out"}`}>
-        <h1>Highscorify</h1>
-        {!token ?(
+       
+        {!token && (
+          <h1>
+            HIGHSCORIFY
+            <span className="header-description">
+              Top Track Generator
+            </span>
+          </h1>
+          
+        )
+        }
+        {!token &&(
         <a 
           className="spotify-link"
           href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`}
@@ -130,12 +137,18 @@ function App() {
               Login To Spotify
             </button>
           </a>
-        ):
-        (<button className="logout-button" onClick={logout}>Logout</button>)}
+        )
+        }
       </header>
       {token&&(
         <div className="hero">
           <div className="highscorify-container">
+            <h1>HIGHSCORIFY</h1>
+            <h2>
+              {settings.selectedPeriod === "short_term" && <span>Last Month</span>}
+              {settings.selectedPeriod === "medium_term" && <span>Last Six Months</span>}
+              {settings.selectedPeriod === "long_term" && <span>Last Year</span>}
+            </h2>
             <table>
               <thead>
                 <tr>
@@ -235,6 +248,7 @@ function App() {
                 </tr>
               </tbody>
             </table>
+            <button className="logout-button" onClick={logout}>Logout</button>
             
           </div>
           <div>
@@ -247,6 +261,5 @@ function App() {
         }
     </div>
   );
-}
 
-export default App;
+}

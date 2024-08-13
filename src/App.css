@@ -6,9 +6,25 @@
   padding: 0;
 }
 
+.link{
+  width:100%;
+  background-color: black;
+  text-align: center;
+  padding: 10px;
+  border-top: 3px solid #8ab9eb;
+  border-bottom: 3px solid #8ab9eb;
+}
+
 html, body {
   overflow-x: hidden;
   width: 100%;
+}
+
+.header-description{
+  display: flex;
+  justify-content: center;
+  font-size: .8rem;
+  padding: 10px;
 }
 
 .App {
@@ -19,28 +35,35 @@ html, body {
   color: #8ab9eb;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-
 .App-header {
   width: 100%;
   overflow: hidden;
 }
 
+h1{
+  padding: 20px;
+}
+
+h2{
+  padding-bottom: 20px;
+  font-size: .6rem;
+}
+
+p{
+  padding: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  width:40%;
+}
+
 .App-header.logged-in {
   background-color: black;
-  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 75%;
   color: white;
-  padding-top:30px;
-  padding-bottom:30px;
 }
 
 .App-header.logged-out {
@@ -50,12 +73,8 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: .5;
   color: white;
-}
-
-h1{
-  font-size: 16px;
 }
 
 .table {
@@ -73,12 +92,12 @@ h1{
   border: solid black 3px;
   border-radius: 5px;
   background-color: green;
-  margin-top: 50px;
-  padding-top:25px;
-  padding-bottom:25px;
+  margin-top: 40px;
+  padding-top:20px;
+  padding-bottom:20px;
   padding-right:10px;
   padding-left:10px;
-  font-size:16px;
+  font-size:.7rem;
   font-family: "Press Start 2P", system-ui;
 
 }
@@ -92,6 +111,7 @@ h1{
   border: solid black 3px;
   border-radius: 5px;
   background-color: lightskyblue;
+  color: black;
   margin-top: 50px;
   padding-top:25px;
   padding-bottom:25px;
@@ -99,19 +119,24 @@ h1{
   padding-left:10px;
   font-size:16px;
   font-family: "Press Start 2P", system-ui;
+  margin-left: auto;
+  margin-right:auto;
 }
+
+
 
 .hero{
   background-color: black;
+  background-image: url(/public/pexels-francesco-ungaro-998641.jpg);
 }
 
 .highscorify-container {
-  padding: 20px;
+ 
   width: 100%;
   height: 100%;
-  font-size: calc(10px + 2vmin);
-  background-image: url("https://i.pinimg.com/originals/1a/7d/cc/1a7dcc374628bc21f6ef890463a77eae.png");
-  background-size: cover;
+  font-size: .7rem;
+  background-image: url(/public/pexels-francesco-ungaro-998641.jpg);
+ 
 }
 
 th{
@@ -122,7 +147,6 @@ td {
   text-align: left;
   padding-bottom:12px;
   line-height: 1.5;
-  
 }
 
 .rank{
@@ -131,8 +155,8 @@ td {
 }
 
 .name{
-  width:270px;
-  word-break: break-all;
+  width:180px;
+  word-break: break-word;
 }
 
 .score{
@@ -150,12 +174,12 @@ table {
 
 .leaderboard-settings{
   margin-bottom:50px;
-  font-size:25px;
+  font-size:1rem;
   margin-top:10px;
 }
 
 .leaderboard-head{
-  font-size: 18px;
+  font-size: .6rem;
 }
 
 thead{
@@ -166,6 +190,7 @@ thead{
 footer{
   padding-top: 30px;
   padding-bottom:30px;
+  font-size: .5rem;
 }
 
 .icon {
