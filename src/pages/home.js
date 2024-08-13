@@ -4,7 +4,8 @@ import Axios from "axios";
 
 export function Home(){
   const CLIENT_ID="611973d560d1464fb5a4db10d6b19a78";
-  const REDIRECT_URI="https://master.d1djejxyh5xexr.amplifyapp.com/callback";
+  const REDIRECT_URI="https://master.d1djejxyh5xexr.amplifyapp.com";
+  // const REDIRECT_URI="http://localhost:3000"
   //host https://master.d1djejxyh5xexr.amplifyapp.com
   const AUTH_ENDPOINT="https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE="token";
@@ -131,7 +132,7 @@ export function Home(){
         {!token &&(
         <a 
           className="spotify-link"
-          href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`}
+          href={`${AUTH_ENDPOINT}/?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`}
           >
             <button className="spotify-login-button">
               Login To Spotify
