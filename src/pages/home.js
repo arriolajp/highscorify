@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import Axios from "axios";
 
 export function Home(){
-  const CLIENT_ID="611973d560d1464fb5a4db10d6b19a78";
+  
   const REDIRECT_URI="https://master.d1djejxyh5xexr.amplifyapp.com";
   // const REDIRECT_URI="http://localhost:3000"
   //host https://master.d1djejxyh5xexr.amplifyapp.com
