@@ -8,7 +8,7 @@
 
 .link{
   display: flex;
-  width:clamp(80vw, 100vw, 100vw);
+  width:clamp(8rem, 100vw, 100vw);
   background-color: black;
   text-align: center;
   padding-top: 20px;
@@ -16,16 +16,15 @@
   padding-left: 10px;
   padding-right: 10px;
   font-family: "Press Start 2P", system-ui;
-  font-size: .8rem;
-  text-align: center;
+  font-size: min(1rem, 30vw);
   justify-content: center;
-  gap: 2vw;
+  gap: 5vw;
 }
 
 .link a{
   text-decoration: none;
   color: #8ab9eb;
-  font-size: .8rem;
+  font-size: .6rem;
 }
 
 html, body {
@@ -52,12 +51,14 @@ html, body {
 }
 
 .App-header {
-  width: 100%;
+  width: min(60vw, 3rem);
   overflow: hidden;
+  font-size: min(.3rem, 3vw);
 }
 
 h1{
   padding: 20px;
+  font-size: min(2rem, 7vw);
 }
 
 h2{
@@ -78,7 +79,6 @@ p{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 75%;
   color: white;
 }
 
@@ -89,15 +89,14 @@ p{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: .5;
   color: white;
 }
 
 .table {
   background: black;
-  width: 50%;
-  height: 500px;
-  margin: 50px auto 0;
+  width: 50vw;
+  height: 100vh;
+  overflow: auto;
 }
 
 .App-link {
@@ -153,8 +152,8 @@ p{
   background-color: lightskyblue;
   color: black;
   margin-top: 50px;
-  padding: 20px 40px;
-  font-size: 16px;
+  padding: min(1em, 3vw);
+  font-size: 1rem;
   font-family: "Press Start 2P", system-ui;
   margin-left: auto;
   margin-right: auto;
@@ -187,6 +186,7 @@ p{
 
 th{
   padding-bottom:20px;
+  
 }
 
 td {
@@ -196,23 +196,32 @@ td {
 }
 
 .rank{
-  text-align:center;
-  
+  text-align:left;
+  width: 1rem;
+}
+
+.rank-header{
+  text-align:left;
 }
 
 .name{
-  width:180px;
-  word-break: break-word;
+  min-width: min(30vw, 40vw);
+  width: min(50vw, 12rem);
 }
 
 .score{
-  text-align:center;
+  text-align:left;
+  width: 1rem;
 }
 
 table {
-  margin: 0 auto;
-  border-spacing: 50px 0px;
+  margin: auto;
+  border-spacing: 1.5rem .1rem;
+  font-size: clamp(.5rem, 1vw, 1.5rem);
+  margin-bottom: 8vh;
+  width: clamp(20rem, 45vw, 90vw);
 }
+
 
 .options{
   font-size:12px;
@@ -253,6 +262,12 @@ button {
   display: flex;
   align-items: center;
   padding: 0;
+}
+
+.leaderboard-options:hover {
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
 }
 
 button span.icon {

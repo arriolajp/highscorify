@@ -4,8 +4,9 @@ import Axios from "axios";
 
 export function Home(){
   const CLIENT_ID="611973d560d1464fb5a4db10d6b19a78";
+  const REDIRECT_URI="http://localhost:3000"; //http://localhost:3000/
   //const REDIRECT_URI="https://master.d1djejxyh5xexr.amplifyapp.com";
-  const REDIRECT_URI="https://highscorify.vercel.app"
+  //const REDIRECT_URI="https://highscorify.vercel.app"
   //host https://master.d1djejxyh5xexr.amplifyapp.com
   const AUTH_ENDPOINT="https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE="token";
@@ -91,17 +92,20 @@ export function Home(){
   };
 
   useEffect(()=>{
-    const hash=window.location.hash;
-    let token=window.localStorage.getItem("token");
+   const hash = window.location.hash;
+  let token = window.localStorage.getItem("token");
 
-    if(!token&&hash){
-      token=hash.substring(1).split("&").find(elem=>elem.startsWith("access_token")).split("=")[1];
-    
-      window.localStorage.setItem("token",token);
-      
-    }
-    setToken(token);
-    
+  if (!token && hash) {
+    token = hash
+      .substring(1)
+      .split("&")
+      .find((elem) => elem.startsWith("access_token"))
+      .split("=")[1];
+
+    window.localStorage.setItem("token", token);
+  }
+
+  setToken(token);
   },[]);
 
   useEffect(() => {
@@ -153,7 +157,7 @@ export function Home(){
             <table>
               <thead>
                 <tr>
-                  <th>RANK</th>
+                  <th className="rank-header">RANK</th>
                   <th>NAME</th>
                   <th>SCORE</th>
                 </tr>
@@ -192,42 +196,42 @@ export function Home(){
                 <th>Time Period</th>
                 <th>Length</th>
               </thead>
-              <tbody>
+              <tbody >
                 <tr>
                   <td>
-                    <button onClick={()=>setSettings({ ...settings, selectedMetric: "top-tracks" })}>
+                    <button className="leaderboard-options" onClick={()=>setSettings({ ...settings, selectedMetric: "top-tracks" })}>
                     {settings.selectedMetric === "top-tracks" && <span className="icon">→</span>}
                       Top Tracks
                     </button>
                   </td>
                   <td>
-                    <button onClick={()=>setSettings({ ...settings, selectedPeriod: "short_term" })}>
+                    <button className="leaderboard-options" onClick={()=>setSettings({ ...settings, selectedPeriod: "short_term" })}>
                     {settings.selectedPeriod === "short_term" && <span className="icon">→</span>}
                       Last Month
                     </button>
                   </td>
                   <td>
-                    <button onClick={()=>setSettings({ ...settings, selectedLimit: 10 })}>
+                    <button  className="leaderboard-options" onClick={()=>setSettings({ ...settings, selectedLimit: 10 })}>
                     {settings.selectedLimit === 10 && <span className="icon">→</span>}
                       Top 10
                     </button>
                   </td>
                 </tr>
                 <tr>
-                <td>
-                    <button onClick={()=>setSettings({ ...settings, selectedMetric: "top-artists" })}>
+                <td >
+                    <button className="leaderboard-options" onClick={()=>setSettings({ ...settings, selectedMetric: "top-artists" })}>
                     {settings.selectedMetric === "top-artists" && <span className="icon">→</span>}
                       Top Artists
                     </button>
                   </td>
                   <td>
-                    <button onClick={()=>setSettings({ ...settings, selectedPeriod: "medium_term" })}>
+                    <button className="leaderboard-options" onClick={()=>setSettings({ ...settings, selectedPeriod: "medium_term" })}>
                     {settings.selectedPeriod === "medium_term" && <span className="icon">→</span>}
                       Last Six Months
                     </button>
                   </td>
                   <td>
-                    <button onClick={()=>setSettings({ ...settings, selectedLimit: 50 })}>
+                    <button className="leaderboard-options" onClick={()=>setSettings({ ...settings, selectedLimit: 50 })}>
                     {settings.selectedLimit === 50 && <span className="icon">→</span>}
                       Top 50
                     </button>
@@ -235,13 +239,13 @@ export function Home(){
                 </tr>
                 <tr>
                   <td>
-                    <button onClick={()=>setSettings({ ...settings, selectedMetric: "top-genres" })}>
+                    <button className="leaderboard-options" onClick={()=>setSettings({ ...settings, selectedMetric: "top-genres" })}>
                     {settings.selectedMetric === "top-genres" && <span className="icon">→</span>}
                       Top Genres
                     </button>
                   </td>
                   <td>
-                    <button onClick={()=>setSettings({ ...settings, selectedPeriod: "long_term" })}>
+                    <button className="leaderboard-options" onClick={()=>setSettings({ ...settings, selectedPeriod: "long_term" })}>
                     {settings.selectedPeriod === "long_term" && <span className="icon">→</span>}
                       Last Year
                     </button>
