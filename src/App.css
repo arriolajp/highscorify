@@ -10,14 +10,16 @@
   width:100%;
   background-color: black;
   text-align: center;
-  padding: 10px;
-  border-top: 3px solid #8ab9eb;
-  border-bottom: 3px solid #8ab9eb;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  font-family: "Press Start 2P", system-ui;
+  font-size: .8rem;
 }
 
 html, body {
   overflow-x: hidden;
   width: 100%;
+  background-color: black;
 }
 
 .header-description{
@@ -67,7 +69,7 @@ p{
 }
 
 .App-header.logged-out {
-  background-color: #282c34;
+  background-color: black;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -89,17 +91,41 @@ p{
 }
 
 .spotify-login-button{
-  border: solid black 3px;
-  border-radius: 5px;
-  background-color: green;
-  margin-top: 40px;
-  padding-top:20px;
-  padding-bottom:20px;
-  padding-right:10px;
-  padding-left:10px;
-  font-size:.7rem;
+  border: solid 4px rgb(177, 177, 177);
+  border-radius: 4px;
+  background-color: lightskyblue;
+  color: black;
+  margin-top: 50px;
+  padding: 20px 40px;
+  font-size: 16px;
   font-family: "Press Start 2P", system-ui;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  box-shadow: 4px 4px 0 rgb(51, 51, 51);
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
 
+.spotify-login-button:active {
+  box-shadow: 2px 2px 0 rgb(51, 51, 51);
+  transform: translate(2px, 2px);
+} 
+
+.privacy{
+  color: #8ab9eb;
+  font-size: 1.2rem;
+}
+
+.contact{
+  color: #8ab9eb;
+  font-size: 1.2rem;
+}
+
+.about{
+  color: #8ab9eb;
+  font-size: 1.2rem;
+  
 }
 
 .spotify-link{
@@ -107,20 +133,26 @@ p{
   color: black;
 }
 
-.logout-button{
-  border: solid black 3px;
-  border-radius: 5px;
+.logout-button {
+  border: solid 4px rgb(175, 175, 175);
+  border-radius: 4px;
   background-color: lightskyblue;
   color: black;
   margin-top: 50px;
-  padding-top:25px;
-  padding-bottom:25px;
-  padding-right:10px;
-  padding-left:10px;
-  font-size:16px;
+  padding: 20px 40px;
+  font-size: 16px;
   font-family: "Press Start 2P", system-ui;
   margin-left: auto;
-  margin-right:auto;
+  margin-right: auto;
+  text-align: center;
+  box-shadow: 4px 4px 0 rgb(51, 51, 51);
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.logout-button:active {
+  box-shadow: 2px 2px 0 rgb(51, 51, 51);
+  transform: translate(2px, 2px);
 }
 
 
