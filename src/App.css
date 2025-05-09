@@ -8,11 +8,13 @@
 
 .link{
   display: flex;
-  width:100%;
+  width:clamp(80vw, 100vw, 100vw);
   background-color: black;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
   font-family: "Press Start 2P", system-ui;
   font-size: .8rem;
   text-align: center;
@@ -23,6 +25,8 @@ html, body {
   overflow-x: hidden;
   width: 100%;
   background-color: black;
+  overflow: auto;
+  scrollbar-width: none;
 }
 
 .header-description{
