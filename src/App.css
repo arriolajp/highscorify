@@ -51,7 +51,7 @@ html, body {
 }
 
 .App-header {
-  width: min(60vw, 3rem);
+  width: 100vw;
   overflow: hidden;
   font-size: min(.3rem, 3vw);
 }
