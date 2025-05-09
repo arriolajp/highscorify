@@ -19,6 +19,13 @@
   font-size: .8rem;
   text-align: center;
   justify-content: center;
+  gap: 2vw;
+}
+
+.link a{
+  text-decoration: none;
+  color: #8ab9eb;
+  font-size: .8rem;
 }
 
 html, body {

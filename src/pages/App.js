@@ -10,9 +10,9 @@ function App() {
   return (
     <Router>
       <div className="link">
-        <Link to ="/" style={{textDecoration: 'none', color: '#8ab9eb', marginRight: '50px'}}> Home</Link>
-        <Link to ="/privacy"  style={{textDecoration: 'none', color: '#8ab9eb', marginRight: '50px'}}> Privacy Policy</Link>
-        <Link to ="/about"  style={{textDecoration: 'none', color: '#8ab9eb', marginRight: '50px'}}> About</Link>
+        <Link to ="/" style={{textDecoration: 'none', color: '#8ab9eb'}}> Home</Link>
+        <Link to ="/privacy"  style={{textDecoration: 'none', color: '#8ab9eb'}}> Privacy</Link>
+        <Link to ="/about"  style={{textDecoration: 'none', color: '#8ab9eb'}}> About</Link>
         <Link to ="/contact"  style={{textDecoration: 'none', color: '#8ab9eb'}}> Contact</Link>
       </div> 
       <Routes>
