@@ -190,7 +190,6 @@ th{
 }
 
 td {
-  text-align: left;
   padding-bottom:12px;
   line-height: 1.5;
 }
@@ -207,14 +206,15 @@ td {
 .name{
   min-width: min(30vw, 40vw);
   width: min(50vw, 12rem);
+  text-align: left;
 }
 
 .score{
-  text-align:left;
+  text-align:right;
   width: 1rem;
 }
 
-table {
+.highscorify-table {
   margin: auto;
   border-spacing: 1.5rem .1rem;
   font-size: clamp(.5rem, 1vw, 1.5rem);
@@ -231,10 +231,12 @@ table {
   margin-bottom:50px;
   font-size:1rem;
   margin-top:10px;
+  margin: auto;
 }
 
 .leaderboard-head{
   font-size: .6rem;
+  
 }
 
 thead{
@@ -260,14 +262,27 @@ button {
   font: inherit;
   cursor: pointer;
   display: flex;
-  align-items: center;
   padding: 0;
+}
+
+.leaderboard-options{
+  width: min(10vw, 5rem);
+  text-align: left; 
+  font-size: min(1.2rem, 2vw, .7rem);
+  align-items: center;
+  margin-left: auto;
+  margin-right:auto;
 }
 
 .leaderboard-options:hover {
   color: white;
   transition: background-color 0.3s ease, color 0.3s ease;
 
+}
+
+.leaderboard-container{
+  margin: auto;
+  margin-top: 5vh;
 }
 
 button span.icon {

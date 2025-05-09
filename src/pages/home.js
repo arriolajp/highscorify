@@ -4,9 +4,9 @@ import Axios from "axios";
 
 export function Home(){
   const CLIENT_ID="611973d560d1464fb5a4db10d6b19a78";
-  //const REDIRECT_URI="http://localhost:3000"; //http://localhost:3000/
+  const REDIRECT_URI="http://localhost:3000"; //http://localhost:3000/
   //const REDIRECT_URI="https://master.d1djejxyh5xexr.amplifyapp.com";
-  const REDIRECT_URI="https://highscorify.vercel.app"
+  //const REDIRECT_URI="https://highscorify.vercel.app"
   //host https://master.d1djejxyh5xexr.amplifyapp.com
   const AUTH_ENDPOINT="https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE="token";
@@ -26,6 +26,23 @@ export function Home(){
   const logout=()=>{
     setToken("");
     window.localStorage.removeItem("token");
+  };
+
+  const validateToken = async() => {
+    try{
+      await Axios.get("https://api.spotify.com/v1/me", {
+        headers: {
+          Authorization: `Bearer ${token}`
+        },
+      });
+      return true;
+    } catch (error) {
+      if (error.response && error.response.status === 401) {
+        console.error("Token is invalid or expired");
+        logout();
+    }
+    return false;
+  }
   };
 
   const getTracks=async ()=>{
@@ -93,7 +110,11 @@ export function Home(){
 
   useEffect(()=>{
    const hash = window.location.hash;
-  let token = window.localStorage.getItem("token");
+   let token = window.localStorage.getItem("token");
+
+   if(token){
+    validateToken();
+   }
 
   if (!token && hash) {
     token = hash
@@ -105,8 +126,10 @@ export function Home(){
     window.localStorage.setItem("token", token);
   }
 
+
+
   setToken(token);
-  },[]);
+  },[token]);
 
   useEffect(() => {
     if (token) {
@@ -154,7 +177,7 @@ export function Home(){
               {settings.selectedPeriod === "medium_term" && <span>Last Six Months</span>}
               {settings.selectedPeriod === "long_term" && <span>Last Year</span>}
             </h2>
-            <table>
+            <table className="highscorify-table">
               <thead>
                 <tr>
                   <th className="rank-header">RANK</th>
@@ -163,6 +186,7 @@ export function Home(){
                 </tr>
               </thead>
               <tbody>
+
                 {settings.selectedMetric==="top-tracks"&&tracks.map((track,index) => (
                   <tr key={track.id}>
                     <td className="rank">{index+1}</td>
@@ -190,7 +214,7 @@ export function Home(){
           </div>
           <div className="options">
             <div className="leaderboard-settings">Leaderboard Settings</div>
-            <table>
+            <table className="leaderboard-container">
               <thead className="leaderboard-head">
                 <th>Metric</th>
                 <th>Time Period</th>
@@ -198,7 +222,7 @@ export function Home(){
               </thead>
               <tbody >
                 <tr>
-                  <td>
+                  <td className="leaderboard-options">
                     <button className="leaderboard-options" onClick={()=>setSettings({ ...settings, selectedMetric: "top-tracks" })}>
                     {settings.selectedMetric === "top-tracks" && <span className="icon">→</span>}
                       Top Tracks
